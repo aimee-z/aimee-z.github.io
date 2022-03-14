@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Space+Mono&display=swap');
+
 h1 {
     font-family: future-pt, helvetica, sans-serif;
     font-weight: bold;
@@ -11,7 +13,6 @@ h1 {
 img {
     width: 200px;
     padding: 10px;
-    margin-left: 80px;
     border: 2px black solid;
     display: block;
 }
@@ -68,7 +69,7 @@ ul li{
 
 p {
     display: inline-block;
-    font-family: future-pt, helvetica, sans-serif;
+    font-family: 'Nunito Sans', helvetica, sans-serif;
     line-height: 2;
     margin: 10px;
     padding: 0px 80px;
@@ -87,3 +88,46 @@ footer {
     font-size: 13px;
     margin-bottom: 20px;
 }
+
+.oil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.oil p {
+    max-width: 70%;
+}
+
+.other {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+}
+
+/* .other .skip {
+    grid-column: 1 / span 1;
+}
+
+.other header {
+    grid-column: 1 / span 3;
+}
+
+.other ul li {
+    grid-column: 2 / span 1;
+}
+
+.other img {
+    grid-column: 2 / span 1;
+    justify-self: center;
+}
+
+.other p {
+    text-align: center;
+    grid-column: 2 / span 1;
+}
+
+.other footer {
+    grid-column: 1 / span 1;
+    text-align: right;
+} */
