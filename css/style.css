@@ -131,3 +131,53 @@ footer {
     grid-column: 1 / span 1;
     text-align: right;
 } */
+
+
+form {
+    border: 3px solid #f1f1f1;
+    width: 75%;
+    margin: 0 auto;
+    display: grid;
+}
+  
+legend{ 
+    font-size: 125%;
+    font-style:italic;
+    text-transform: uppercase;
+    text-align: center;
+}
+  
+label{
+    display: inline-block;
+    margin-right:10px;
+    width:15%;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+  
+input[type=checkbox]{
+      display:inline;
+      width:inherit;
+}
+  
+input[type=submit] {
+    background-color: darkgray;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+  
+input[type=submit]:hover {
+    opacity: 0.8;
+}
+  
