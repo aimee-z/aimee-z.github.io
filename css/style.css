@@ -4,9 +4,10 @@
 
 /* to-do:
 1. have all photos hover = show a title and year with animation
-2. include linkedin and email contact on about page
 4. have animations on nav
 5. fix contact page
+6. aria-lables
+7. check mobilee view on phone
 */
 
 
@@ -25,6 +26,7 @@ h1 {
 
 img {
     min-width: 75%;
+    max-width: 75%;
     padding: 10px;
     display: block;
 }
