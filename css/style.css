@@ -1,25 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap');
+
+/* to-do:
+1. have all photos hover = show a title and year with animation
+2. include linkedin and email contact on about page
+3. background image
+4. have animations on nav
+5. fix contact page
+6. animate one image
+7. google analytics
+*/
+
 
 h1 {
-    font-family: future-pt, helvetica, sans-serif;
+    font-family: helvetica, sans-serif;
     font-weight: bold;
+    letter-spacing: 0.04em;
     font-size: 50px;
     text-transform: uppercase;
     margin: auto;
     text-align: center;
-    padding: 60px 0px;
+    padding-top: 24px;
+    padding-bottom: 30px;
+    max-width: 80%;
 }
 
 img {
-    width: 200px;
+    min-width: 75%;
     padding: 10px;
-    border: 2px black solid;
     display: block;
 }
 
-img:hover {
-    box-shadow: 5px 5px rgb(80, 64, 175);
-    opacity: 0.7;
+#headshot {
+    justify-self: center;
+    margin:0 auto;
+    min-width: 75%;
+    animation: slidein 3s;
+}
+
+@keyframes slidein {
+    from {opacity: 0; border-radius: 15%;}
+    to {opacity: 1; border-radius: 0%;}
+}
+
+#space {
+    background-image: url(../images/groovy.jpg);
 }
 
 a {
@@ -33,59 +59,77 @@ a:hover {
 }
 
 .skip {
-    font-family: future-pt, helvetica, sans-serif;
+    font-family: 'Nunito Sans', helvetica, sans-serif;
     text-transform: uppercase;
     text-decoration: underline;
     font-size: 13px;
     padding-left: 80px;
+    position:relative;  
+    right: 500px;
+}
+
+.skip:focus {
+    position: static;
 }
 
 nav {
-    margin: auto;
     margin-top: 30px;
     text-align: center;
 }
 
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
 ul li{
     display: inline;
-    color: black;
-    font-family: future-pt, helvetica, sans-serif;
+    font-family: 'Nunito Sans', helvetica, sans-serif;
     text-decoration: underline;
     text-transform: uppercase;
     margin: 10px 35px;
     padding: 10px 0px;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .chosen {
     color: black;
-    border: 1px solid darkgray;
-}
-
-#headshot {
-    display: inline-block;
-    width: 400px
+    border: 1px black solid;
 }
 
 p {
-    display: inline-block;
-    font-family: 'Nunito Sans', helvetica, sans-serif;
+    font-family: 'Raleway', sans-serif;
     line-height: 2;
-    margin: 10px;
-    padding: 0px 80px;
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    font-family: 'Work Sans', helvetica, sans-serif;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 25px;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
 
 hr {
-    width: 90%; 
+    width: 75%; 
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 3%;
  }
 
 footer {
-    font-family: future-pt, helvetica, sans-serif;
+    font-family: 'Raleway', helvetica, sans-serif;
     text-transform: uppercase;
     text-decoration: underline;
     font-size: 13px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -97,24 +141,12 @@ footer {
 }
 
 .oil p {
-    max-width: 70%;
+    max-width: 76%;
 }
 
 .other {
     display: grid;
-    grid-template-columns: 1fr 10fr 1fr;
-}
-
-/* .other .skip {
-    grid-column: 1 / span 1;
-}
-
-.other header {
-    grid-column: 1 / span 3;
-}
-
-.other ul li {
-    grid-column: 2 / span 1;
+    grid-template-columns: 1fr 40fr 1fr;
 }
 
 .other img {
@@ -127,11 +159,20 @@ footer {
     grid-column: 2 / span 1;
 }
 
-.other footer {
-    grid-column: 1 / span 1;
-    text-align: right;
-} */
+.digital {
+    display: grid;
+    grid-template-columns: 1fr 40fr 1fr;
+}
 
+.digital img {
+    grid-column: 2 / span 1;
+    justify-self: center;
+}
+
+.digital p {
+    text-align: center;
+    grid-column: 2 / span 1;
+}
 
 form {
     border: 3px solid #f1f1f1;
@@ -180,4 +221,3 @@ input[type=submit] {
 input[type=submit]:hover {
     opacity: 0.8;
 }
-  
