@@ -5,11 +5,8 @@
 /* to-do:
 1. have all photos hover = show a title and year with animation
 2. include linkedin and email contact on about page
-3. background image
 4. have animations on nav
 5. fix contact page
-6. animate one image
-7. google analytics
 */
 
 
@@ -44,8 +41,15 @@ img {
     to {opacity: 1; border-radius: 0%;}
 }
 
+@media (prefers-reduced-motion) {
+    #headshot {
+        animation: none;
+    }
+}
+
 #space {
     background-image: url(../images/groovy.jpg);
+    background-color: azure;
 }
 
 a {
@@ -93,8 +97,8 @@ ul li{
 }
 
 .chosen {
-    color: black;
-    border: 1px black solid;
+    color: darkblue;
+    border: 1px darkblue solid;
 }
 
 p {
@@ -172,6 +176,10 @@ footer {
 .digital p {
     text-align: center;
     grid-column: 2 / span 1;
+}
+
+.fa {
+    margin: 5px;
 }
 
 form {
