@@ -4,8 +4,6 @@
 
 /* to-do:
 1. have all photos hover = show a title and year with animation
-4. have animations on nav
-5. fix contact page
 */
 
 h1 {
@@ -21,6 +19,10 @@ h1 {
     max-width: 80%;
 }
 
+#pagename {
+    display: none;
+}
+
 img {
     min-width: 75%;
     max-width: 76%;
@@ -32,7 +34,7 @@ img {
     justify-self: center;
     margin:0 auto;
     min-width: 75%;
-    animation: slidein 3s;
+    animation: slidein 2s;
 }
 
 @keyframes slidein {
@@ -47,25 +49,6 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-    #headshot {
-        animation: none;
-    }
-
-    #space {
-        background-attachment: initial;
-    }
-
-    html{
-        scroll-behavior: auto;
-    }
-    
-    a.skip {
-        -webkit-transition: initial;
-        transition: initial;
-    }
 }
 
 a {
@@ -144,44 +127,83 @@ hr {
     margin-bottom: 3%;
  }
 
-.flip-card {
-    background-color: transparent;
+.card {
+    position:relative;
+    display: block;
     width: 300px;
-    height: 200px;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px;
-    margin: auto 0;
+    height: 300px;
+    margin: 0 auto;
+    perspective: 500px;
 }
-
-.flip-card-inner {
-    position: relative;
+  
+.content {
     width: 100%;
     height: 100%;
-    transition: transform 0.8s;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: transform 1s;
     transform-style: preserve-3d;
 }
-
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+  
+.card:hover .content, .card:focus .content, .card:focus-within .content, .card:active .content {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
 }
 
-.flip-front, .flip-back {
+.card:focus .content {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+}
+  
+.front, .back {
     position: absolute;
-    width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    width: 100%;
+    background: white;
+    line-height: 300px;
+    color: black;
+    text-align: center;
+    font-size: 35px;
+    border-radius: 5px;
     backface-visibility: hidden;
 }
 
-.flip-front {
-    background-color: #bbb;
-    color: black;
+.front img {
+    max-width: 100%;
+    min-width: 0%;
+    padding: 0px;
 }
-
-.flip-back {
-    background-color: black;
+  
+.back {
+    background: black;
     color: white;
     transform: rotateY(180deg);
+}
+  
+@media screen and (prefers-reduced-motion: reduce) {
+    #headshot {
+        animation: none;
+    }
+
+    #space {
+        background-attachment: initial;
+    }
+
+    html{
+        scroll-behavior: auto;
+    }
+    
+    a.skip {
+        -webkit-transition: initial;
+        transition: initial;
+    }
+
+    .content {
+        transition: none;
+    }
+
+    .card:hover .content {
+        transition: none;
+    }
 }
 
 footer {
@@ -197,7 +219,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: justify;
 }
 
 .oil .imgpair p {
@@ -206,17 +228,15 @@ footer {
 
 .other {
     display: grid;
-    grid-template-columns: 1fr 40fr 1fr;
+    grid-template-columns: 1fr;
 }
 
-.other img {
-    grid-column: 2 / span 1;
-    justify-self: center;
+.other div img {
+    margin: 0 auto;
 }
 
-.other p {
-    text-align: center;
-    grid-column: 2 / span 1;
+.other div p {
+    text-align: justify;
 }
 
 .digital {
@@ -234,14 +254,78 @@ footer {
     grid-column: 2 / span 1;
 }
 
-.fa {
-    margin: 5px;
+.fonta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.aicon {
+    padding-top: 10px;
+}
+
+#myBtn {
+    color: #444444;
+    padding: 10px;
+    padding-top: none;
+}
+
+#myBtn:hover {
+    color: #ccc;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+#myBtn {
+    background-color: white;
+    border: none;
+}
+  
+.modal-content {
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 90%;
+    border-radius: 15px;
+}
+
+embed {
+    width: 100%;
+    height: 95%;
+    border-radius: 10px;
+}
+  
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 form {
     border: 3px solid #f1f1f1;
     width: 75%;
     margin: 0 auto;
+    border-radius: 10px;
 }
   
 legend{ 
@@ -268,6 +352,7 @@ input, textarea {
     border: 1px solid #ccc;
     box-sizing: border-box;
     font-family: sans-serif;
+    border-radius: 10px;
 }
   
 input[type=checkbox]{
@@ -284,6 +369,7 @@ input[type=submit] {
     margin-bottom: 30px;
     cursor: pointer;
     font-size:large;
+    border-radius: 10px;
     width: 70%;
     display: block;
 }
@@ -292,35 +378,36 @@ input[type=submit]:hover {
     opacity: 0.8;
 }
 
-@media screen and (min-width: 950px){
+@media screen and (min-width: 900px){
     ul {
         flex-direction: row;
         justify-content: center;
+        margin-bottom: 20px;
     }
 
     ul li {
         margin: 5px;
     }
-
-    .other {
+   
+    .other .imgpair {
+        display: grid;
         grid-template-columns: 3fr 2fr;
-        gap: 2%;
     }
-    
-    .other img {
-        grid-column: 1 / span 1;
-        justify-self: right;
+
+    .other .imgpair img {
+        grid-column: 1/span 1;
     }
-    .other p {
-        grid-column: 2 / span 1;
+
+    .other .imgpair p {
+        grid-column: 2/span 1;
         text-align: left;
         align-self: center;
+        margin-right: 30%;
     }
 
     .oil {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
         justify-content: center;
     }
 
@@ -333,6 +420,7 @@ input[type=submit]:hover {
         max-width: 40%;
         padding: 5%;
         padding-left: 10%;
+        padding-top: 0%;
     }
 
     .oil .imgpair p {
@@ -341,10 +429,73 @@ input[type=submit]:hover {
     }
 }
 
-@media screen and (min-width: 1500px){
-    h1 {
-        color:aqua;
+@media screen and (min-width: 1400px){
+    ul {
+        justify-content: right;
+        padding-right: 20px;
+        margin-bottom: 30px;
     }
 
+    ul li {
+        margin: 0px;
+    } 
     
+    .oil {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .oil .imgpair {
+        width: 45%;
+        flex-direction: column;
+        padding-top: 10px;
+        margin: 10px;
+    }
+
+    .oil .imgpair img {
+        min-width: 0px;
+        max-width: 76%;
+        padding: 0px;
+    }
+
+    .oil .imgpair p {
+        padding: 0px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        text-align: justify;
+        width: 76%;
+    }
+
+    .other {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .other .imgpair {
+        display:inline-block;
+    }
+
+    .other .imgpair p {
+        text-align: justify;
+        margin-left: 85px;
+    }
+    
+    #item1 {
+        grid-column: 1/span 2;
+        grid-row: 1;
+    }
+
+    #item2 {
+        grid-column: 3/span 2;
+        grid-row: 1;
+    }
+
+    #item4 {
+        grid-column: 1/span 2;
+        grid-row: 2;
+    }
+
+    #item5 {
+        grid-column: 3/span 2;
+        grid-row: 2;
+    }
 }
