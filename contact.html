@@ -28,8 +28,8 @@
         <nav>
             <ul>
                 <li><a href = "index.html">About</a></li>
-				<li><a href = "oils.html">Oil Paintings</a></li>
-				<li><a href = "digital.html">Digital Work</a></li>
+                <li><a href = "oils.html">Oil Paintings</a></li>
+                <li><a href = "digital.html">Digital Work</a></li>
                 <li><a href = "other.html">Other Mediums</a></li>
                 <li><a href = "contact.html" class="chosen"> Contact Me</a></li>
             </ul>
@@ -38,6 +38,17 @@
     </header>
 
     <main>
+        <div class="card">
+            <div class="content">
+              <div class="front">
+                <img src="images/space.jpg">
+              </div>
+              <div class="back">
+                <p>Talk to me about anything! :)</p>
+              </div>
+            </div>
+          </div>
+
         <form
         action="https://formspree.io/f/xdobdgep"
         method="POST">
@@ -48,28 +59,21 @@
                 <label for="name_id">Your Name</label>
                 <input type="text" placeholder="Enter Your Name" id = "name_id" name="name" required>
 
+                <label for="pronoun_id">Your Pronouns</label>
+                <input type="text" placeholder="Enter Your Pronouns" id = "pronoun_id" name="pronoun">
+
                 <label for="email_id">Your Email</label>
                 <input type="email" placeholder="Enter Your Email" id = "email_id" name="email" required>
 
                 <label for="phone_id">Your Phone Number</label>
-                <input type="tel" name="phone" placeholder="123-456-7890" id = "phone_id" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <input type="tel" name="phone" placeholder="123-456-7890" id = "phone_id" required>
 
                 <label for="msg">Leave A Message</label>
-                <textarea placeholder="Enter your message" id = "msg" name="mesg" required></textarea>
+                <textarea placeholder="Enter your message" id = "msg" name="message" required></textarea>
 
                 <input type="submit" value = "Contact Me">
             </fieldset>
         </form>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-front">
-                    <img src="images/space.jpg" alt="Picture of outer space.">
-                </div>
-                <div class="flip-back">
-                    <p>Feel free to talk about anything you would like.</p>
-                </div>
-            </div>
-        </div>
     </main>
     <footer>
         <p>Aimee Zheng &copy; 2021<span class="fa fa-solid fa-crow" role="img" aria-label="Decorative Crow"></span></p>
