@@ -153,12 +153,6 @@ hr {
     transform: rotateY( 180deg ) ;
     transition: transform 0.5s;
 }
-
-iframe {
-    margin: 0 auto;
-    padding-top: 10px;
-    display: block;
-}
   
 .front, .back {
     position: absolute;
