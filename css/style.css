@@ -2,10 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&display=swap');
 
-/* to-do:
-1. have all photos hover = show a title and year with animation
-*/
-
 h1 {
     font-family: helvetica, sans-serif;
     font-weight: bold;
